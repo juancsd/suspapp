@@ -1,4 +1,4 @@
-name: CI/CD - Produção
+name: Cria imagem Docker
 
 on:
   push:
