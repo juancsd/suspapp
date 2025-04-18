@@ -20,6 +20,7 @@ jobs:
           java-version: '17'
 
       - name: Build do projeto com Maven
+        working-directory: seguranca
         run: mvn clean package -DskipTests
 
       - name: Login no Docker Hub
