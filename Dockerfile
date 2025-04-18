@@ -12,6 +12,6 @@ RUN mvn clean package -DskipTests
 FROM openjdk:21-slim
 
 WORKDIR /app
-COPY --from=builder /app/seguranca/target/seguranca-1.0.jar app.jar
+COPY --from=builder /app/seguranca/target/seguranca-0.0.1-SNAPSHOT.jar app.jar
 
 ENTRYPOINT ["java", "-jar", "/app/app.jar"]
