@@ -7,6 +7,7 @@ on:
 
 jobs:
   build:
+    name: Build Docker Image
     runs-on: ubuntu-latest
 
     steps:
@@ -38,7 +39,7 @@ jobs:
     needs: build
 
     steps:
-      - name: Deploy to Azure Web App
+      - name: Azure Web App Deploy
         uses: azure/webapps-deploy@v2
         with:
           app-name: ${{ secrets.AZURE_WEBAPP_NAME }}
@@ -49,4 +50,4 @@ jobs:
               "userPWD": "${{ secrets.AZURE_PASSWORD }}",
               "destinationAppUrl": "https://${{ secrets.AZURE_WEBAPP_NAME }}.azurewebsites.net"
             }
-          images: '${{ secrets.DOCKER_USERNAME }}/suspapp:latest'
+          images: '${{ secrets.DOCKER_REPO }}:latest'
