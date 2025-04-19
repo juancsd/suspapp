@@ -10,6 +10,6 @@ public class SuspApplication {
 		SpringApplication.run(SuspApplication.class, args);
 	}
 
-	//comentário de teste docker
+
 
 }
